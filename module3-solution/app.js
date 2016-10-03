@@ -47,7 +47,13 @@ function NarrowItDownController(MenuSearchService) {
 
   nController.searchMenuItems = function(){
 
-  nController.found = MenuSearchService.getMatchedMenuItems(nController.searchTerm);
+  if (nController.searchTerm == "") {
+    nController.found = [];
+  }
+  else {
+    nController.found = MenuSearchService.getMatchedMenuItems(nController.searchTerm);
+  };
+
 
   };
 
